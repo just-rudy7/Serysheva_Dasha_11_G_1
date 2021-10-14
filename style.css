@@ -2,8 +2,8 @@ li {
     list-style-type: none; /* Убираем маркеры */
 }
 ul {
-    margin-left: 1; /* Отступ слева в браузере IE и Opera */
-    padding-left: 1; /* Отступ слева в браузере Firefox, Safari, Chrome */
+    margin-left: 1; /* Отступ слева*/
+    padding-left: 1; /*Отступ слева*/
 }
 
 a {
@@ -21,14 +21,6 @@ h3{
     color:rgb(26, 78, 190);
 }
 
-
-header {
-    background-color: rgba(218, 198, 255, 0.87);
-}
-footer {
-    background-color: rgba(198, 227, 255, 0.87);
-}
-
 img {
     padding: 5px;
     margin-right: 10px;
@@ -36,6 +28,48 @@ img {
     outline: 1px solid blueviolet;
     background-color: cornsilk;
 
+}
+
+header {
+    background-color: rgba(218, 198, 255, 0.87);
+    padding: 10px;
+    list-style: none;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: rgba(198, 227, 255, 0.87);
+    padding: 10px;
+    list-style: none;
+    border-radius: 5px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+
+.menu-item{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.main-header{
+    text-align: center;
+}
+
+.menu-link{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2em;
+}
+
+.menu-link:hover{
+    color:rgb(93, 9, 172);
+}
+
+.container{
+    margin: 20px 20px;
 }
 
 .item-img{
@@ -65,16 +99,39 @@ img {
 .price{
     text-align: right;
     width: 25%;
+    display: inline-block;
+}
+
+.description{
+    text-align: left;
 }
 
 .help{
     width: 50px;
     height: 50px;
-    background-color: blueviolet;
+    background-color: rgb(76, 0, 255);
     color:cornsilk;
     font-size: 2.7em;
     border-radius: 100%;
     position: fixed;
     top: 80%;
     right: 10px;
+}
+
+.q{
+    text-align: center;
+    margin: 0 !important;
+    height: 100%;
+}
+
+.help:hover{
+    background-color: blueviolet;
+}
+
+.q-link{
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0px;
+    display: block;
 }
