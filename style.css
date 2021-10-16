@@ -21,6 +21,10 @@ h3{
     color:rgb(26, 78, 190);
 }
 
+.logo {
+    float: left;
+ }
+
 img {
     padding: 5px;
     margin-right: 10px;
