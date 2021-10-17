@@ -53,6 +53,10 @@ body{
     margin: 0 auto;
 }
 
+.desk{
+    font-size: 1,1em;
+}
+
 .menu-item{
     display: inline-block;
     margin-right: 20px;
