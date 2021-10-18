@@ -39,13 +39,17 @@ header {
     padding: 10px;
     list-style: none;
     border-radius: 5px;
+
+    
 }
 
 footer {
     background-color: rgba(198, 227, 255, 0.87);
-    padding: 10px;
+    padding: 5px;
     list-style: none;
     border-radius: 5px;
+    height: 75px;
+    width: 100%;
 }
 
 body{
@@ -142,4 +146,27 @@ body{
     margin: 0;
     padding: 0px;
     display: block;
+}
+
+.buy{
+    border-color:rgb(76, 0, 255);
+    color:rgb(25, 34, 112);
+}
+
+.buy:hover{
+    background-color: slateblue;
+    border-color: rgb(0, 60, 255);
+    color:rgb(248, 165, 248)
+}
+
+.btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px){
+    body { background: rgb(250, 232, 255);}
+    .menu-item {
+        display: block;
+    }
 }
