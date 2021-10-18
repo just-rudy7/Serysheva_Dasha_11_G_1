@@ -20,13 +20,15 @@ h2{
 h3{
     color:rgb(26, 78, 190);
 }
-
+h4{
+    color:rgb(26, 78, 190);
+}
 .logo {
     float: left;
  }
 
 img {
-    padding: 5px;
+    padding:5px;
     margin-right: 10px;
     margin-bottom: 10px;
     outline: 1px solid blueviolet;
@@ -79,10 +81,6 @@ body{
     color:rgb(93, 9, 172);
 }
 
-.container{
-    margin: 20px 20px;
-}
-
 .item-img{
     width: 200px;
     display: block;
@@ -91,7 +89,7 @@ body{
 
 .item-card{
     display: inline-block;
-    width: 350px;
+    width: 375px;
     margin-top: 10px;
     padding: 5px;
     margin-bottom: 10px;
@@ -136,7 +134,7 @@ body{
 }
 
 .help:hover{
-    background-color: blueviolet;
+    background-color: rgb(147, 117, 255);
 }
 
 .q-link{
