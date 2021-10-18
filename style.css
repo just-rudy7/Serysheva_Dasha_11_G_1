@@ -38,9 +38,7 @@ header {
     background-color: rgba(218, 198, 255, 0.87);
     padding: 10px;
     list-style: none;
-    border-radius: 5px;
-
-    
+    border-radius: 5px;  
 }
 
 footer {
@@ -48,8 +46,9 @@ footer {
     padding: 5px;
     list-style: none;
     border-radius: 5px;
-    height: 75px;
+    min-height: 75px;
     width: 100%;
+    Display: inline-block;
 }
 
 body{
@@ -151,6 +150,7 @@ body{
 .buy{
     border-color:rgb(76, 0, 255);
     color:rgb(25, 34, 112);
+    background-color: rgb(231, 228, 252);
 }
 
 .buy:hover{
