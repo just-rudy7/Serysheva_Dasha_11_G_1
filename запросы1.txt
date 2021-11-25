@@ -12,4 +12,4 @@ SELECT DISTINCT(substr(date_of_birth, 1, 4)) FROM The_User
 4.
 SELECT count(prod_id) as 'total_items' FROM Product
 5.
-SELECT avg(substr(CURRENT_DATE, 0, 5) - substr(date_of_birth, 0, 5)) as 'Ср возраст зарегистрировавшихся покупателей' FROM The_User WHERE (substr(CURRENT_DATE, 6, 2) - substr(reg_data, 6, 2) <= 2)
+SELECT avg(substr(CURRENT_DATE, 0, 5) - substr(date_of_birth, 0, 5)) as 'Ср возраст зарегистрировавшихся покупателей' FROM The_User WHERE reg_data >= date('now', '-2 months')
