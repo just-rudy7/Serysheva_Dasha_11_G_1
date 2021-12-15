@@ -1,0 +1,14 @@
+Выбор ЦЕНЫ товара(-ов) из ОПРЕДЕЛЁННОГО заказа
+SELECT price AS 'Цена товара с выбранным номером' FROM Product WHERE prod_id = (SELECT prod_id FROM Order_comp WHERE order_num = (SELECT order_num FROM orders where order_num = 1))
+
+Выбор стоимости каждой позиции заказов(!!!)
+SELECT Order_comp.order_num AS 'Номер заказа', Product.price*Order_comp.amount_ordered AS 'Стоимость' FROM Order_comp, Product WHERE Order_comp.prod_id = Product.prod_id
+
+Выбор адресов доставки оплаченных заказов
+SELECT orders.order_num AS 'Номер заказа', The_User.address AS 'Адрес доставки' FROM Orders, The_User WHERE orders.user_id = The_User.user_id AND orders.if_payed = 1
+
+Выбор количества оставшихся на складе товаров
+SELECT Product.prod_name AS 'Название товара', Product.amount_left AS 'Количество на складе' FROM Product
+
+Выбор понравившихся товаров для каждого пользователя
+SELECT The_User.username AS 'Имя пользователя', Product.prod_name AS 'Понравившийся товар' FROM The_User, Favorites, Product WHERE (The_User.user_id = Favorites.user_id AND Favorites.prod_id = Product.prod_id)
