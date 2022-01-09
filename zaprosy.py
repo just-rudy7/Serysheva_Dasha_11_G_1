@@ -3,7 +3,7 @@ import sqlite3
 conn = sqlite3.connect("Dasha db (1).db")
 cursor = conn.cursor()
 
-cursor.execute("SELECT price AS 'Цена товара с выбранным номером' FROM Product WHERE prod_id = (SELECT prod_id FROM Order_comp WHERE order_num = (SELECT order_num FROM orders where order_num = 1))")
+cursor.execute("SELECT price AS 'Цена товара с выбранным номером', prod_id FROM Product WHERE prod_id = (SELECT prod_id FROM Order_comp WHERE order_num = (SELECT order_num FROM orders where order_num = 1))")
 print(cursor.fetchall())
 
 cursor.execute("SELECT Order_comp.order_num AS 'Номер заказа', Product.price*Order_comp.amount_ordered AS 'Стоимость' FROM Order_comp, Product WHERE Order_comp.prod_id = Product.prod_id")
