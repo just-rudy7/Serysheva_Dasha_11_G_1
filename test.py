@@ -10,14 +10,6 @@ class DB():
     def __del__(self):
         self.__connection.close()
 
-    @property
-    def get_cursor(self):
-        return self.__cursor
-
-    @property
-    def conn(self):
-        return self.__connection
-
     def The_User(self, id: int):
         request = 'SELECT username, address, date_of_birth, reg_data FROM The_User WHERE user_id = :id'
         return self.__cursor.execute(request, {'id': id}).fetchall()
@@ -26,16 +18,48 @@ class DB():
         request = 'SELECT prod_name, cat_id, description, amount_left, price FROM Product WHERE prod_id = :id'
         return self.__cursor.execute(request, {'id': id}).fetchall()
 
-    def orders(self, id: int):
-        request = 'SELECT user_id, money, if_payed FROM orders WHERE order_num = :id'
-        return self.__cursor.execute(request, {'id': id}).fetchall()
-
     def cat(self, id: int):
         request = 'SELECT cat_name, description FROM Category WHERE cat_id = :id'
         return self.__cursor.execute(request, {'id': id}).fetchall()
 
+    def orders(self, id: int):
+        request = 'SELECT user_id, money, if_payed FROM orders WHERE order_num = :id'
+        return self.__cursor.execute(request, {'id': id}).fetchall()
+
+    @property
+    def get_cursor(self):
+        return self.__cursor
+
+    @property
+    def conn(self):
+        return self.__connection
+
 
 class TestDB(unittest.TestCase):
+
+    def test_user(self):
+        for i in range(1, 4 + 1):
+            request = self.__temp.The_User(id=i)
+            self.assertEqual(1, len(request))
+
+    def test_cat(self):
+        for i in range(1, 3 + 1):
+            request = self.__temp.cat(id=i)
+            self.assertEqual(1, len(request))
+
+    def test_prod(self):
+        for i in range(1, 3 + 1):
+            request = self.__temp.prod(id=i)
+            self.assertEqual(1, len(request))
+
+    def test_orders(self):
+        for i in range(1, 3 + 1):
+            request = self.__temp.orders(id=i)
+            self.assertEqual(1, len(request))
+
+    def tearDown(self):
+        self.__temp.conn.close()
+
     def setUp(self):
         self.__temp = DB(':memory:')
         self.__temp.get_cursor.executescript(
@@ -119,30 +143,6 @@ class TestDB(unittest.TestCase):
             COMMIT;
             '''
         )
-
-    def test_user(self):
-        for i in range(1, 4 + 1):
-            request = self.__temp.The_User(id=i)
-            self.assertEqual(1, len(request))
-
-    def test_prod(self):
-        for i in range(1, 3 + 1):
-            request = self.__temp.prod(id=i)
-            self.assertEqual(1, len(request))
-
-    def test_cat(self):
-        for i in range(1, 3 + 1):
-            request = self.__temp.cat(id=i)
-            self.assertEqual(1, len(request))
-
-    def test_orders(self):
-        for i in range(1, 3 + 1):
-            request = self.__temp.orders(id=i)
-            self.assertEqual(1, len(request))
-
-    def tearDown(self):
-        self.__temp.conn.close()
-
 
 if __name__ == '__main__':  # точка входа в программу
     unittest.main(failfast=False)
