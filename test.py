@@ -144,4 +144,3 @@ class TestDB(unittest.TestCase):
 
 if __name__ == '__main__':  # точка входа в программу
     unittest.main(failfast=False)
-#
