@@ -64,7 +64,6 @@ class TestDB(unittest.TestCase):
         self.__temp = DB(':memory:')
         self.__temp.get_cursor.executescript(
             '''
-            BEGIN TRANSACTION
             CREATE TABLE IF NOT EXISTS "The_User" (
                    "user_id"	INTEGER UNIQUE,
                     "username"	TEXT NOT NULL UNIQUE,
@@ -103,7 +102,7 @@ class TestDB(unittest.TestCase):
             );
             INSERT INTO orders VALUES (1, 2, 1104.0, 1);
             INSERT INTO orders VALUES (2, 3, 160.0, 0);
-            INSERT INTO orders VALUES (3, 1, 1104.0, 1)
+            INSERT INTO orders VALUES (3, 1, 1104.0, 1);
             
             CREATE TABLE IF NOT EXISTS "Order_comp" (
                 "order_num"	INTEGER NOT NULL,
@@ -140,7 +139,6 @@ class TestDB(unittest.TestCase):
             INSERT INTO Category VALUES (1, 'lemonade', 'delicious');
             INSERT INTO Category VALUES (2, 't-shirt', 'cool');
             INSERT INTO Category VALUES (3, 'my_dog', 'good_boi');
-            COMMIT;
             '''
         )
 
