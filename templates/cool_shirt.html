@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <header class="header-footer">
-            <h2><img src="improshop.jpg" width=190px height=70px alt = "Логотип" class = "logo">
+            <h2><img src="{{ url_for('static', filename='img_logo/improshop.jpg') }}" width=190px height=70px alt = "Логотип" class = "logo">
                 Импровизированный магазинчик импровизированных товаров
             </h2>
             <ul>
@@ -32,7 +32,7 @@
         </header>
         <div class="catalog-items">
             <div class="item-card">
-                <a href="impala"><img class = "item-img" src="impala.jpg" width=1px height=395px></a>
+                <a href="impala"><img class = "item-shrt" src="{{ url_for('static', filename='img_prod/impala.jpg') }}" width=1px height=395px></a>
                 <br>
                 <h3 class="name">футболка "Импала"</h3>
                 <h4 class="price">1967 руб</h4>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="item-card">
-                <a href="cakehole"><img class = "item-img" src="cakehole.jpg" height=395px></a>
+                <a href="cakehole"><img class = "item-shrt" src="{{ url_for('static', filename='img_prod/cakehole.jpg') }}" height=395px></a>
                 <br>
                 <h3 class="name">футболка "Правило"</h3>
                 <h4 class="price">2005 руб</h4>

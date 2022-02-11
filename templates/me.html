@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <header class="header-footer">
-            <h2><img src="improshop.jpg" width=190px height=70px alt = "Логотип" class = "logo">
+            <h2><img src="{{ url_for('static', filename='img_logo/improshop.jpg') }}" width=190px height=70px alt = "Логотип" class = "logo">
                 Импровизированный магазинчик импровизированных товаров
             </h2>
             <ul>
@@ -34,7 +34,7 @@
         <h4>Нас не много, а точнее одна я. Так что без лишних слов /звуки барабанной дроби/ представляю вам</h4>
         <a class="menu-link" href="https://vk.com/ne_pridumal_nic"> Серышева Даша!! </a>
         <br>
-        <img src="Я.jpg" wigth="400" height="400">
+        <img src="{{ url_for('static', filename='img_logo/Я.jpg') }}" wigth="400" height="400">
         <h4>Не надо, не надо аплодисментов. Обойдемся без них(спасибо)</h4>
         <p class="desk"> Для обратной связи можно написать в одной из следующих социальных сетей:
             <br>ВКонтакте: <a class="menu-link" href="https://vk.com/ne_pridumal_nic">тык</a>

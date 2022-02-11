@@ -36,6 +36,7 @@ img {
 
 }
 
+
 header {
     background-color: rgba(218, 198, 255, 0.87);
     padding: 10px;
@@ -82,6 +83,20 @@ body{
 }
 
 .item-img{
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.item-shrt{
+    float: left;
+    width: 275px;
+    display: block;
+    margin: 0 auto;
+}
+
+.item-shrt_prod{
+    float: left;
     width: 200px;
     display: block;
     margin: 0 auto;

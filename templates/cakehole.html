@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <header class="header-footer">
-            <h2><img src="improshop.jpg" width=190px height=70px alt = "Логотип" class = "logo">
+            <h2><img src="{{ url_for('static', filename='img_logo/improshop.jpg') }}" width=190px height=70px alt = "Логотип" class = "logo">
                 Импровизированный магазинчик импровизированных товаров
             </h2>
             <ul>
@@ -31,7 +31,7 @@
             </ul>
         </header>
         <br>
-        <img src="cakehole.jpg" width=190px height=400px alt = "Футболка со смыслом" align=left class = "logo">
+        <img src="{{ url_for('static', filename='img_prod/cakehole.jpg') }}" height=300px alt = "Футболка со смыслом" class = "item-shrt_prod">
         <h3 class="desk"> Оригинальная футболка. <br>Очень оригинальная. Может вместо вас ответить надоедающим любителям поставить попсу, когда вы за рулём.
         </h3>
         <br>
