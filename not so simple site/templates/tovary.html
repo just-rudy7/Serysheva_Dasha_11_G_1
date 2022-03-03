@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-wrapper">
+    <div class="catalog-items">
+    <div class="item-card">
+        <a href="impala"><img class = "item-shrt" src="{{ url_for('static', filename='img_prod/impala.jpg') }}" width=1px height=395px></a>
+        <br>
+        <h3 class="name">{{item.name}}</h3>
+        <h4 class="price"> {{item.price}} </h4>
+        <p class="description">{{item.description}}</p>
+        <button class="buy" onclick="window.location.href='impala'">ПРОСМОТР</button>
+    </div>
+
+    <div class="item-card">
+        <a href="cakehole"><img class = "item-shrt" src="{{ url_for('static', filename='img_prod/cakehole.jpg') }}" height=395px></a>
+        <br>
+        <h3 class="name">футболка "Правило"</h3>
+        <h4 class="price">2005 руб</h4>
+        <p class="description">за касету Металлики/Нирваны/Моторхеда</p>
+        <button class="buy" onclick="window.location.href='cakehole'">ПРОСМОТР</button>
+    </div>
+
+    </div>
+</div>
+{% endblock %}
