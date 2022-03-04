@@ -46,8 +46,8 @@ def imp_shrt():
 def cakehole_shrt():
     return render_template("cakehole.html")
 
-@app.route('/abra')
-def abra():
-    return render_template("tovary.html")
+#@app.route('/abra')
+#def abra():
+#    return render_template("tovary.html")
 
 app.run(debug=True)
