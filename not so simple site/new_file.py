@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/abra')
 def abra():
-    return render_template("tovary.html")
+    return render_template("katalog.html")
 
 
 app.run(debug=True)
