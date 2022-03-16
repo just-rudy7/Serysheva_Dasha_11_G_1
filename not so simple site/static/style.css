@@ -105,6 +105,7 @@ body{
 .item-card{
     display: inline-block;
     width: 375px;
+    /* min-height: 550px; */
     margin-top: 10px;
     padding: 5px;
     margin-bottom: 10px;

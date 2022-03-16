@@ -10,7 +10,7 @@
                 <h3 class="name">{{item.name}}</h3>
                 <h4 class="price"> {{item.price}} </h4>
                 <p class="description">{{item.description}}</p>
-                <button class="buy" onclick="window.location.href='impala'">ПРОСМОТР</button>
+                <button class="buy" onclick="window.location.href={{item.name}}'">ПРОСМОТР</button>
             </div>
         {% endfor %}
     </div>
