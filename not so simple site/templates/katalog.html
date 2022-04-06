@@ -5,12 +5,11 @@
     <div class="catalog-items">
         {% for item in items %}
             <div class="item-card">
-                <a href="/item/{{item.name}}"><img class = "item-shrt" src="{{ url_for('static', filename='img_prod/' + item.image) }}"></a>
+                <a href="/lem/?lem_id={{item.prod_id}}"> товар </a>
                 <br>
-                <h3 class="name">{{item.name}}</h3>
+                <h3 class="name">{{item.prod_name}}</h3>
                 <h4 class="price"> {{item.price}} </h4>
                 <p class="description">{{item.description}}</p>
-                <button class="buy" onclick="window.location.href={{item.name}}'">ПРОСМОТР</button>
             </div>
         {% endfor %}
     </div>

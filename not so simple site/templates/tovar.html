@@ -1,18 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for item in items%}
-        <br>
-            <img src="{{ url_for('static', filename='img_prod/' + item.image) }}" width=190px height=400px alt = "item.alt" align=left class = "logo">
-            <h3 class="desk"> Безалкогольный напиток брожжения с незыбываемым вкусом. В жаркий день подарит свежесть, а в грусный, дождливый день будет идеальным дополнением к пледу и любимому фильму/сериалу/произведению. Бобби гарантирует.</h3>
-        <br>
-
-        <p class="desk">
-            Доставка в любой уголок России 100 руб за километр, самовывоз бесплатно в любое время по адресу г. Спб, ул. Джона Леннона <br>
-            1 бутылка   -  80 руб      <button class="buy">Добавить в корзину</button> <br>
-            10 бутылок  - 670 руб    <button class="buy">Добавить в корзину</button> <br>
-            100 бутылок - 5000 руб   <button class="buy">Добавить в корзину</button> <br>
-            <button class="btn btn-outline-primary" onclick="window.location.href='/drinks'">К КАТАЛОГУ НАПИТКОВ</button>
-        </p>
-    {% endfor %}
+    <br>
+        <h3 class="desk"> Безалкогольный напиток брожжения с незыбываемым вкусом. В жаркий день подарит свежесть, а в грусный, дождливый день будет идеальным дополнением к пледу и любимому фильму/сериалу/произведению. Бобби гарантирует.</h3>
+    <br>
+    <p class="desk">
+        Доставка в любой уголок России 100 руб за километр, самовывоз бесплатно в любое время по адресу г. Спб, ул. Джона Леннона <br>
+        10 бутылок  - 670 руб    <button class="buy">Добавить в корзину</button> <br>
+        <button class="btn btn-outline-primary" onclick="window.location.href='/drinks'">К КАТАЛОГУ НАПИТКОВ</button>
+    </p>
 {% endblock %}
