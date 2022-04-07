@@ -2,7 +2,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from app import db
-#УБРАТЬ КАТЕГОРИИ
 
 class the_user(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
@@ -13,7 +12,7 @@ class the_user(db.Model):
     age = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return f'{self.user_id} {self.username}'
+        return f'{self.user_id}{self.username}'
 
 class category(db.Model):
     cat_id = db.Column(db.Integer, primary_key=True)
@@ -65,4 +64,5 @@ class order_comp(db.Model):
 class otziv(db.Model):
     ot_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable = False)
+    email = db.Column(db.String(80), nullable = False)
     text = db.Column(db.String(80), nullable = False)

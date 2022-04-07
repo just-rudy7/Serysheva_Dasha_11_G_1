@@ -1,10 +1,16 @@
-from orm import the_user, product, favorites, orders, order_comp
+from orm import otziv, the_user, product, favorites, orders, order_comp
 from flask import *
 from flask_sqlalchemy import SQLAlchemy
 from app import db, app
 
 @app.route('/')
 def mainnn():
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        text = request.form.get("text")
+        db.session.add(otziv(name = name, email = email, text = text))
+        db.session.commit()
     return render_template("menu.html")
 
 @app.route('/drinks')
