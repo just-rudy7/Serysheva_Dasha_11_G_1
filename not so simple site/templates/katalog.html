@@ -1,17 +1,22 @@
-{% extends "base.html" %}
+<div class="container">
 
-{% block content %}
-<div class="main-wrapper">
-    <div class="catalog-items">
-        {% for item in items %}
-            <div class="item-card">
-                <a href="/lem/?lem_id={{item.prod_id}}"> товар </a>
-                <br>
-                <h3 class="name">{{item.prod_name}}</h3>
-                <h4 class="price"> {{item.price}} </h4>
-                <p class="description">{{item.description}}</p>
-            </div>
-        {% endfor %}
+    {% extends "base.html" %}
+
+    {% block content %}
+    <div class="main-wrapper">
+        <div class="catalog-items">
+            {% for item in items %}
+                <div class="item-card">
+                    <a href="/lem/?lem_id={{item.prod_id}}"><img class = "item-shrt" src="{{ url_for('static', filename='img_prod/' + item.image) }}"></a>
+
+                    <br>
+                    <h3 class="name">{{item.prod_name}}</h3>
+                    <h4 class="price"> {{item.price}} </h4>
+                    <p class="description">{{item.description}}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
+    
+    {% endblock %}
 </div>
-{% endblock %}
