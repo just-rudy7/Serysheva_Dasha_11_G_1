@@ -6,10 +6,10 @@ from app import db, app
 @app.route('/')
 def mainnn():
     if request.method == "POST":
-        name = request.form.get("name")
-        email = request.form.get("email")
-        text = request.form.get("text")
-        db.session.add(otziv(name = name, email = email, text = text))
+        name_o = request.form.get("name")
+        email_o = request.form.get("email")
+        text_o = request.form.get("text")
+        db.session.add(otziv(name = name_o, email = email_o, text = text_o))
         db.session.commit()
     return render_template("menu.html")
 
@@ -27,7 +27,3 @@ def mee():
     return render_template("me.html")
 
 app.run(debug=True)
-
-'''{'name': "Медовый лимонад от Бобби", 'image': "honeyy.png", 'price': "от 80 руб", 'description': "Никого - кроме аллергиков - не оставит равнодушным"}
-    , {'name': "Имбирно-пряный лимонад от Бобби", 'image': "ginger.png", 'price': "от 80 руб", 'description': "Никого - кроме аллергиков - не оставит равнодушным"}, 
-    {'name': "Цитрусовый лимонад от Бобби", 'image': "citruus.png", 'price': "от 80 руб", 'description': "Никого - кроме аллергиков - не оставит равнодушным"}'''
