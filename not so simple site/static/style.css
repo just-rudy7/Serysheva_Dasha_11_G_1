@@ -226,25 +226,46 @@ body{
 }
 
 input[type="text"] {
-    border: 1px solid #cccccc; 
     border-radius: 3px; 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -khtml-border-radius: 3px;
     background: #ffffff !important; 
     outline: none; 
-    height: 24px;
-    width: 120px; 
+    height: 30px;
+    width: 200px; 
     color: #cccccc; 
-    font-size: 11px;
+    font-size: 15px;
     font-family: Tahoma; 
  }
 
- .custom-field input {
-    padding: 12px;
-    border-radius: 3px;
-    color: #000;
-  }
+ input[type="email"] {
+    border-radius: 3px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    background: #ffffff !important; 
+    outline: none; 
+    height: 30px;
+    width: 200px; 
+    color: #cccccc; 
+    font-size: 15px;
+    font-family: Tahoma; 
+ }
+
+ textarea {
+    border-radius: 3px; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    background: #ffffff !important; 
+    outline: none; 
+    height: 400px;
+    width: 400px; 
+    color: #cccccc; 
+    font-size: 15px;
+    font-family: Tahoma; 
+ }
 
   .sub-button{
     width: 130px;

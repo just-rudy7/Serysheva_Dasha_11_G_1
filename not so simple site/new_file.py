@@ -5,7 +5,6 @@ from app import db, app
 
 @app.route('/', methods=['GET', 'POST'])
 def mainnn():
-<<<<<<< HEAD
     feedback = otziv.query.all()
     if request.method == 'POST':
         name = request.form.get("name")
@@ -20,15 +19,6 @@ def mainnn():
             feedback.append(f)
             feedback.reverse()
     return render_template('menu.html', feedback=feedback)
-=======
-    if request.method == "POST":
-        name_o = request.form.get("name")
-        email_o = request.form.get("email")
-        text_o = request.form.get("text")
-        db.session.add(otziv(name = name_o, email = email_o, text = text_o))
-        db.session.commit()
-    return render_template("menu.html")
->>>>>>> 31a69af09726337c19509576972267e6aec3fa5b
 
 @app.route('/drinks')
 def cat_drink():
