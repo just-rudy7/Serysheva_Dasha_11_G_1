@@ -33,4 +33,7 @@ def which_nap():
 def mee():
     return render_template("me.html")
 
+@app.route('/sighn-in')
+def si():
+    return render_template("me.html")
 app.run(debug=True)
