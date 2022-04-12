@@ -2,7 +2,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from app import db
-#УБРАТЬ КАТЕГОРИИ
 
 class the_user(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
@@ -13,7 +12,7 @@ class the_user(db.Model):
     age = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return f'{self.user_id} {self.username}'
+        return f'{self.user_id}{self.username}'
 
 class category(db.Model):
     cat_id = db.Column(db.Integer, primary_key=True)
@@ -28,8 +27,9 @@ class product(db.Model):
     cat_id = db.Column(db.Integer, db.ForeignKey('category.cat_id'), nullable=False)
     prod_name = db.Column(db.String(80), unique=True, nullable=False)
     description = db.Column(db.String(80))
-    amount_left = db.Column(db.Integer, nullable=False)
+    amount_left = db.Column(db.Integer)
     price=db.Column(db.Integer, nullable=False)
+    image=db.Column(db.String(80))
     #картинка
 
     def __repr__(self):
@@ -44,18 +44,18 @@ class favorites(db.Model):
         return f'{self.user_id}{self.prod_id}'
 
 class orders(db.Model):
-    order_num = db.Column(db.Integer, primary_key=True)
+    order_id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('the_user.user_id'))
     money = db.Column(db.Integer, nullable=False)
     if_payed = db.Column(db.Boolean, nullable=False)
 
     def __repr__(self):
-        return f'{self.order_num}{self.user_id}'
+        return f'{self.order_id}{self.user_id}'
 
 
 class order_comp(db.Model):
     comp_num = db.Column(db.Integer, primary_key=True)
-    order_id = db.Column(db.Integer, db.ForeignKey('orders.order_num'))
+    order_id = db.Column(db.Integer, db.ForeignKey('orders.order_id'))
     prod_id = db.Column(db.Integer, db.ForeignKey('product.prod_id'))
     amount = db.Column(db.Integer, nullable=False)
 
@@ -65,4 +65,5 @@ class order_comp(db.Model):
 class otziv(db.Model):
     ot_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable = False)
+    email = db.Column(db.String(80), nullable = False)
     text = db.Column(db.String(80), nullable = False)
