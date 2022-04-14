@@ -36,4 +36,18 @@ def mee():
 @app.route('/sighn-in')
 def si():
     return render_template("me.html")
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        name = request.form.get('username')
+        password = request.form.get('password')
+        try:
+            if the_user.query.filter_by(username=name).one().validate(password):
+                session['name'] = name
+                return redirect(url_for('index'), code=301)
+        except:
+            pass # ! обработать ошибку
+    return render_template('login.html')
+    
 app.run(debug=True)

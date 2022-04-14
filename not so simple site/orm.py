@@ -2,17 +2,21 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from app import db
+import hashlib
 
 class the_user(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    password = db.Column(db.String(80), nullable=False)
+    password = db.Column(db.String(256), nullable=False)
     address = db.Column(db.String(80), unique=False)
     reg_data = db.Column(db.DateTime, nullable=True)
     age = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return f'{self.user_id}{self.username}'
+
+    def validate(self, password):
+        return self.password == password
 
 class category(db.Model):
     cat_id = db.Column(db.Integer, primary_key=True)

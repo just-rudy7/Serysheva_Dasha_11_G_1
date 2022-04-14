@@ -4,7 +4,7 @@ from datetime import datetime
 
 db.create_all()
 
-Dean = the_user(username = "Dean", password = "Impala , image=""", reg_data = datetime.now(), age=26, address="Kansas")
+Dean = the_user(username = "Dean", password = "2401" , reg_data = datetime.now(), age=26, address="Kansas")
 Sam = the_user(username = "Sam", password = "lawboi", reg_data = datetime.now(), age=22, address="Stanford")
 Peter = the_user(username = "WebHead", password = "gr8power", reg_data = datetime.now(), age=17, address="Queens")
 lemonade = category(cat_name = "drinks", description = "tasty")
