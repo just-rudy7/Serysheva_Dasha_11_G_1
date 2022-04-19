@@ -47,7 +47,22 @@ def login():
                 session['name'] = name
                 return redirect(url_for('index'), code=301)
         except:
-            pass # ! обработать ошибку
-    return render_template('login.html')
-    
+            pass
+    return render_template('login.html', item = session)
+
+@app.route('/logout')
+def logout():
+    if session.get('name'):
+        session.pop('name')
+    return redirect('/login', code=302)
+
+
+@app.route('/firsttry', methods=['GET', 'POST'])
+def firsttry():
+    if request.method == 'POST':
+        name = request.form.get('username')
+        password = request.form.get('password')
+        
+    return render_template(firsttry.html)
+
 app.run(debug=True)

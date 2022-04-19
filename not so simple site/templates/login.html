@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method="POST" class="auth">
-    <input type="text" name="username" class="form-control" placeholder="Enter your login">
-    <input type="password" name="password" class="form-control" placeholder="Your password">
-    <input type="submit" value="Войти" class="btn btn-primary">
-</form>
+    <a class="menu-link" href="/firsttry"> В первый раз? </a>
+    {% if not session %}
+        <form method="POST" class="auth">
+            <input type="text" name="username" class="form-control" placeholder="Enter your login">
+            <input type="password" name="password" class="form-control" placeholder="Your password">
+            <input type="submit" value="Войти" class="btn btn-primary">
+        </form>
+    {% else %}
+        <h3>Пользователь: {{session['name']}} </h3>
+        ?<a class="menu-link" href="/logout">Выход</a>
+    {% endif %}
+
 {% endblock %}
