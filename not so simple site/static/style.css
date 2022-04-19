@@ -238,7 +238,7 @@ input[type="text"] {
     font-family: Tahoma; 
  }
 
- input[type="email"] {
+input[type="email"] {
     border-radius: 3px; 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -252,7 +252,7 @@ input[type="text"] {
     font-family: Tahoma; 
  }
 
- textarea {
+textarea {
     border-radius: 3px; 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -266,7 +266,7 @@ input[type="text"] {
     font-family: Tahoma; 
  }
 
-  .sub-button{
+.sub-button{
     width: 130px;
     height: 40px;
     border: none;
@@ -280,4 +280,8 @@ input[type="text"] {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+}
+
+form-control{
+    width: 1000px
 }

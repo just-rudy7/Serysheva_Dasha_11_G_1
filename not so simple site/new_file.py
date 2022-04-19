@@ -1,7 +1,9 @@
-from orm import otziv, the_user, product, favorites, orders, order_comp
 from flask import *
 from flask_sqlalchemy import SQLAlchemy
-from app import db, app
+import datetime
+from app import app, db
+from orm import favorites, order_comp, orders, otziv, product, the_user
+
 
 @app.route('/', methods=['GET', 'POST'])
 def mainnn():
@@ -62,7 +64,15 @@ def firsttry():
     if request.method == 'POST':
         name = request.form.get('username')
         password = request.form.get('password')
-        
-    return render_template(firsttry.html)
+        address = request.form.get('address')
+        age = request.form.get('age')
+        db.session.add(the_user(username = name, password = password, age=age, address=address))
+        try:
+            if the_user.query.filter_by(username=name).one().validate(password):
+                session['name'] = name
+                return redirect(url_for('index'), code=301)
+        except:
+            pass
+    return render_template('firsttime.html', item = session)
 
 app.run(debug=True)

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if not session %}
+        <form method="POST"><br>
+            <input type="text" name="username" placeholder="Введите имя пользователя"><br>
+            <input type="text" name="password" placeholder="Введите Ваш пароль"><br>
+            <input type="text" name="address" placeholder="Введите адресс доставки"><br><br>
+            <input type="submit" value="Регистрация" class="sub-button">
+        </form>
+    {% else %}
+        <h3>Пользователь: {{session['name']}} </h3>
+        ?<a class="menu-link" href="/logout">Выход</a>
+    {% endif %}
+
+{% endblock %}
