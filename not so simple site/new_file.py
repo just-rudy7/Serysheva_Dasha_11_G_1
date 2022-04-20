@@ -67,6 +67,7 @@ def firsttry():
         address = request.form.get('address')
         age = request.form.get('age')
         db.session.add(the_user(username = name, password = password, age=age, address=address))
+        db.session.commit()
         try:
             if the_user.query.filter_by(username=name).one().validate(password):
                 session['name'] = name
