@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+<div class="container">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +23,7 @@
                     <a class="menu-link" href="/">Главная</a>
                 </li>
                 <li class = "menu-item">
-                    <a class="menu-link" href="/trash">Корзина</a>
+                    <a class="menu-link" href="/order">Корзина</a>
                 </li>
                 <li class = "menu-item">
                     <a class="menu-link" href="/about">О нас</a>
@@ -32,7 +33,6 @@
                 </li>
             </ul>
         </header>
-
         {% block content %} {% endblock %}
 
         <Footer>
@@ -44,4 +44,5 @@
     </div>
 </body>
 
+</div>
 </html>

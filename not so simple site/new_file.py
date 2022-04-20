@@ -35,9 +35,6 @@ def which_nap():
 def mee():
     return render_template("me.html")
 
-@app.route('/sighn-in')
-def si():
-    return render_template("me.html")
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -51,6 +48,11 @@ def login():
         except:
             pass
     return render_template('login.html', item = session)
+
+@app.route('/order')
+def order():
+    id = the_user.query.filter_by(username=session['name']).one()
+    return render_template('korzina.html', items=favorites.query.filter_by(user_id = id.user_id).all())
 
 @app.route('/logout')
 def logout():
