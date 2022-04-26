@@ -11,6 +11,9 @@ class the_user(db.Model):
     address = db.Column(db.String(80), unique=False)
     reg_data = db.Column(db.DateTime, nullable=True)
     age = db.Column(db.Integer, nullable=False)
+    hon = db.Column(db.Integer, nullable=False)
+    lem = db.Column(db.Integer, nullable=False)
+    imb = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return f'{self.user_id}{self.username}'

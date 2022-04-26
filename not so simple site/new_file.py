@@ -26,9 +26,19 @@ def mainnn():
 def cat_drink():
     return render_template("katalog.html", items=product.query.all())
 
-@app.route('/lem/', methods = ['GET'])
+@app.route('/lem/', methods = ['GET', 'POST'])
 def which_nap():
     lem_id = int(request.args.get('lem_id', -1))
+    if session:
+        if request.method == 'POST':
+            us = the_user.query.filter_by(username=session['name']).one()
+            if lem_id == 1:
+                us.lem += 1
+            elif lem_id == 2:
+                us.hon += 1
+            elif lem_id == 3:
+                us.imb += 1
+            db.session.commit()
     return render_template("tovar.html", item=product.query.filter_by(prod_id = lem_id).one())
 
 @app.route('/about')
@@ -51,8 +61,11 @@ def login():
 
 @app.route('/order')
 def order():
-    id = the_user.query.filter_by(username=session['name']).one()
-    return render_template('korzina.html', items=favorites.query.filter_by(user_id = id.user_id).all())
+    if session:
+        us = the_user.query.filter_by(username=session['name']).one()
+        return render_template('korzina.html', items = [us.lem, us.hon, us.imb])
+    else:
+        return render_template('korzina.html', items = [0, 0 ,0])
 
 @app.route('/logout')
 def logout():
